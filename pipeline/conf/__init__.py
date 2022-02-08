@@ -1,8 +1,15 @@
+'''
+#### CONFIGURATION BUILD MODELING ####
+'''
+
 asset_path = "G:/Artfx/TD4/WS_MicroFilm/MOVIE/ASSETS/{name}/{task}/{state}/{name}_{task}_{version}.{extension}"
+template_path = "G:/Artfx/TD4/Pipeline_Git/pipeline/maya/templates/modeling_template.ma"
 
-modeling_path = "G:/Artfx/TD4/Pipeline_Git/pipeline/maya/templates/modeling_template.ma"
+#####
 
+'''
+#### CONFIGURATION PUBLISH MODELING ####
+'''
 
-path_test = "G:/Artfx/TD4/WS_MicroFilm/MOVIE/ASSETS"
+grp_valid = ["front", "persp", "side", "top", "top_grp"]
 
-modeling_path_final = "G:/Artfx/TD4/WS_MicroFilm/MOVIE/ASSETS/CHAIR/MODELING/WIP/CHAIR_MODELING_V001.MA/modeling_template.ma"
