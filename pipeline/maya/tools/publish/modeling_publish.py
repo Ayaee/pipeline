@@ -6,9 +6,9 @@ from pipeline import conf
 from pipeline.maya.tools.publish import utils
 
 
-def modeling():
+def publish():
     utils.clean()
-    utils.publish()
+    utils.save_publish()
 
 
 

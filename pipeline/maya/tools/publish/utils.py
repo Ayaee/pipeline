@@ -23,7 +23,7 @@ def importe():
     pass
     #cmds.file(ir = True)
 
-def publish():
+def save_publish():
     wip_path = cmds.file(sceneName=True, q=True)
     print(wip_path)
     publish_path = wip_path.replace("WIP", "PUBLISH").replace(".ma", ".mb")
