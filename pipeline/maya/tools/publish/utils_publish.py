@@ -20,8 +20,7 @@ def clean():
             pm.delete(element)
 
 def importe():
-    pass
-    #cmds.file(ir = True)
+    pm.FileReference(namespace="modeling").importContents(removeNamespace=True)
 
 def save_publish():
     wip_path = cmds.file(sceneName=True, q=True)
