@@ -8,6 +8,7 @@ from pipeline import conf
 #### UTILITAIRE TOUT PUBLISH ####
 '''
 
+
 def clean():
     panel = pm.ls("|*")
 
@@ -19,8 +20,10 @@ def clean():
             print(element)
             pm.delete(element)
 
+
 def importe():
     pm.FileReference(namespace="modeling").importContents(removeNamespace=True)
+
 
 def save_publish():
     wip_path = cmds.file(sceneName=True, q=True)

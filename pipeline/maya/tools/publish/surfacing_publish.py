@@ -1,14 +1,12 @@
 import pymel.core as pm
 
-from pipeline.maya.tools.publish import utils_publish
+import utils_publish as up
 
 
 def publish():
-    utils_publish.clean()
-    utils_publish.importe()
-    utils_publish.save_publish()
-
-
+    up.clean()
+    up.importe()
+    up.save_publish()
 
 
 ##### TEST #####
