@@ -3,6 +3,7 @@ import six
 
 from PySide2.QtWidgets import QApplication, QDialog, QLineEdit
 from Qt import QtCompat, QtCore
+from pipeline.maya.tools.build import modeling_build as mb
 
 
 if six.PY2:
@@ -19,14 +20,21 @@ class ToolWindow(QDialog):
         super(ToolWindow, self).__init__()
         QtCompat.loadUi(str(ui_path), self)
 
-        lineEdit = self.findChild()
+        #self.testButton.accepted.connect(self.do_build())
+        self.ok.clicked.connect(self.do_build)
 
-        self.show()
+
+    def do_build(self):
+        self.entry = self.findChild(QLineEdit, "entry")
+        nameAsset = self.entry.text()
+        print(nameAsset)
+        mb.build(nameAsset)
+        #return nameAsset
+
 
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
     t = ToolWindow()
-    #sys.exit(ToolWindow.exec_())
-    #t.show()
+    t.show()
     app.exec_()
