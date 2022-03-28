@@ -1,12 +1,11 @@
+import utils_publish as utils
 import pymel.core as pm
-
-import utils_publish as up
 
 
 def publish():
-    up.clean()
-    up.importe()
-    up.save_publish()
+    utils.clean()
+    utils.importe()
+    utils.save_publish()
 
 
 ##### TEST #####

@@ -1,9 +1,10 @@
-import sys
-import six
-
+from pipeline.maya.tools.build import surfacing_build as surfacing
+from pipeline.maya.tools.build import modeling_build as modeling
+from pipeline.maya.tools.build import rigging_build as rigging
 from PySide2.QtWidgets import QApplication, QDialog, QLineEdit
 from Qt import QtCompat, QtCore
-from pipeline.maya.tools.build import modeling_build as mb
+import six
+import sys
 
 
 if six.PY2:
@@ -28,7 +29,7 @@ class ToolWindow(QDialog):
         self.entry = self.findChild(QLineEdit, "entry")
         nameAsset = self.entry.text()
         print(nameAsset)
-        mb.build(nameAsset)
+        modeling.build(nameAsset)
         #return nameAsset
 
 

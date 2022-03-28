@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>350</width>
+    <width>352</width>
     <height>300</height>
    </rect>
   </property>
@@ -49,31 +49,51 @@
      <number>20</number>
     </property>
     <item>
-     <layout class="QHBoxLayout" name="horizontalLayout">
+     <layout class="QVBoxLayout" name="layoutBuild">
+      <property name="spacing">
+       <number>0</number>
+      </property>
+      <property name="topMargin">
+       <number>5</number>
+      </property>
       <item>
-       <widget class="QLabel" name="task_2">
+       <widget class="QLabel" name="buildAsset">
         <property name="maximumSize">
          <size>
-          <width>71</width>
+          <width>500</width>
           <height>16777215</height>
          </size>
         </property>
         <property name="styleSheet">
-         <string notr="true">font: 25pt &quot;MS Shell Dlg 2&quot;;
-text-decoration: underline;</string>
+         <string notr="true">font: 25pt &quot;MS Shell Dlg 2&quot;;</string>
         </property>
         <property name="text">
-         <string>Build</string>
+         <string>Build Asset</string>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QLabel" name="label">
-        <property name="styleSheet">
-         <string notr="true">font: 25pt &quot;MS Shell Dlg 2&quot;;</string>
+       <widget class="Line" name="line">
+        <property name="maximumSize">
+         <size>
+          <width>72</width>
+          <height>16777215</height>
+         </size>
         </property>
-        <property name="text">
-         <string>Asset</string>
+        <property name="sizeIncrement">
+         <size>
+          <width>0</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
         </property>
        </widget>
       </item>

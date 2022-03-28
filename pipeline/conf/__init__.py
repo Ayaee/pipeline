@@ -19,9 +19,3 @@ template_path = "G:/Artfx/TD4/Pipeline_Git/pipeline/maya/templates/modeling_temp
 
 grp_valid = ["front", "persp", "side", "top", "top_grp"]
 ####
-
-'''
-#### CONFIGURATION BUILD SURFACING  ####
-'''
-
-
