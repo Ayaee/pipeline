@@ -6,10 +6,9 @@ from Qt import QtCompat, QtCore
 import six
 import sys
 
-
 if six.PY2:
     from pathlib2 import Path
-else :
+else:
     from pathlib import Path
 
 ui_path = Path(__file__).parent / "window.ui"
@@ -21,17 +20,29 @@ class ToolWindow(QDialog):
         super(ToolWindow, self).__init__()
         QtCompat.loadUi(str(ui_path), self)
 
-        #self.testButton.accepted.connect(self.do_build())
+        # self.testButton.accepted.connect(self.do_build())
         self.ok.clicked.connect(self.do_build)
-
+        self.cancel.clicked.connect(self.do_cancel)
+        self.choose.activated(self.do_choose())
 
     def do_build(self):
         self.entry = self.findChild(QLineEdit, "entry")
         nameAsset = self.entry.text()
         print(nameAsset)
         modeling.build(nameAsset)
-        #return nameAsset
 
+    def do_choose(self):
+        self.QComboBox(["Modeling", "Surfacing", "Rigging"])
+        if choose == "Modeling":
+
+        elif choose == "Surfacing":
+
+        else:
+
+    def do_cancel(self):
+
+
+# Ferme la fenetre
 
 
 if __name__ == '__main__':
