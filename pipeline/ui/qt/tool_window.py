@@ -6,12 +6,14 @@ from Qt import QtCompat, QtCore
 import six
 import sys
 
+from pipeline.utils import dialogs
+
 if six.PY2:
     from pathlib2 import Path
 else:
     from pathlib import Path
 
-ui_path = Path(__file__).parent / "window.ui"
+ui_path = Path(__file__).parent / "build_window.ui"
 
 
 class ToolWindow(QDialog):
@@ -20,29 +22,32 @@ class ToolWindow(QDialog):
         super(ToolWindow, self).__init__()
         QtCompat.loadUi(str(ui_path), self)
 
-        # self.testButton.accepted.connect(self.do_build())
-        self.ok.clicked.connect(self.do_build)
-        self.cancel.clicked.connect(self.do_cancel)
-        self.choose.activated(self.do_choose())
+        self.ok.clicked.connect(self.do_choose)
+        self.choose.addItems(["Modeling", "Surfacing", "Rigging"])
+        # self.cancel.close.connect(self.do_cancel)
+        #self.ok.
 
-    def do_build(self):
+
+    def do_choose(self):
         self.entry = self.findChild(QLineEdit, "entry")
         nameAsset = self.entry.text()
         print(nameAsset)
-        modeling.build(nameAsset)
-
-    def do_choose(self):
-        self.QComboBox(["Modeling", "Surfacing", "Rigging"])
+        choose = str(self.choose.currentText())
         if choose == "Modeling":
-
+            modeling.build(nameAsset)
         elif choose == "Surfacing":
-
+            try:
+                surfacing.build(nameAsset)
+            except Exception as ex:
+                dialogs.Dialogs().warn(ex)
         else:
+            try:
+                rigging.build(nameAsset)
+            except Exception as ex:
+                dialogs.Dialogs().warn(ex)
 
     def do_cancel(self):
-
-
-# Ferme la fenetre
+        pass
 
 
 if __name__ == '__main__':

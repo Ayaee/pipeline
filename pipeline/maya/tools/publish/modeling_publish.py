@@ -9,5 +9,5 @@ def publish():
 
 ##### TEST #####
 if __name__ == '__main__':
-    pm.openFile("G:/Artfx/TD4/WS_MicroFilm/MOVIE/ASSETS/CHAIR/MODELING/WIP/CHAIR_MODELING_V002.ma", force=True)
+    pm.openFile("D:/ABYGAELLE_FABRE/WS_MicroFilm/MOVIE/ASSETS/CHAIR/MODELING/WIP/CHAIR_MODELING_V002.ma", force=True)
     publish()

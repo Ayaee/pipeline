@@ -1,3 +1,4 @@
+from  pipeline.utils import pipeline_exception
 from pipeline import conf
 import glob
 import os
@@ -11,7 +12,13 @@ def files(name,task):
     name = name.strip().upper()
     select_paths = glob.glob(conf.asset_path.format(name=name, task=task, state="PUBLISH", version="*", extension="mb"))
     last_path = sorted(select_paths, reverse=True)
+
+    if not last_path:
+        raise pipeline_exception.PipelineException("Previous publish path is not available")
+
     return last_path[0].replace(os.sep, "/")
+
+
 
 
 def pre_build(name, task):

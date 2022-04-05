@@ -3,14 +3,14 @@
 #### CONFIGURATION PATH BASE ####
 '''
 
-asset_path = "G:/Artfx/TD4/WS_MicroFilm/MOVIE/ASSETS/{name}/{task}/{state}/{name}_{task}_{version}.{extension}"
+asset_path = "D:/ABYGAELLE_FABRE/WS_MicroFilm/MOVIE/ASSETS/{name}/{task}/{state}/{name}_{task}_{version}.{extension}"
 ####
 
 '''
 #### CONFIGURATION BUILD MODELING ####
 '''
 
-template_path = "G:/Artfx/TD4/Pipeline_Git/pipeline/maya/templates/modeling_template.ma"
+template_path = "D:/ABYGAELLE_FABRE/Pipeline_Git/pipeline/maya/templates/modeling_template.ma"
 #####
 
 '''
