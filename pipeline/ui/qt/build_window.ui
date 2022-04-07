@@ -249,21 +249,21 @@
     <item>
      <layout class="QHBoxLayout" name="layoutButton">
       <property name="leftMargin">
-       <number>80</number>
+       <number>67</number>
       </property>
       <property name="topMargin">
        <number>50</number>
       </property>
       <property name="rightMargin">
-       <number>80</number>
+       <number>70</number>
       </property>
       <item>
-       <widget class="QPushButton" name="ok">
+       <widget class="QPushButton" name="build">
         <property name="styleSheet">
          <string notr="true">font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
         </property>
         <property name="text">
-         <string>Ok</string>
+         <string>Build</string>
         </property>
        </widget>
       </item>
@@ -281,12 +281,33 @@
        </spacer>
       </item>
       <item>
-       <widget class="QPushButton" name="cancel">
+       <widget class="QPushButton" name="buildOpen">
+        <property name="minimumSize">
+         <size>
+          <width>100</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>80000</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>MS Shell Dlg 2</family>
+          <pointsize>10</pointsize>
+          <weight>50</weight>
+          <italic>false</italic>
+          <bold>false</bold>
+         </font>
+        </property>
         <property name="styleSheet">
          <string notr="true">font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
         </property>
         <property name="text">
-         <string>Cancel</string>
+         <string>Build and Open</string>
         </property>
        </widget>
       </item>

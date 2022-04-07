@@ -10,11 +10,12 @@ import os
 
 def files(name,task):
     name = name.strip().upper()
-    select_paths = glob.glob(conf.asset_path.format(name=name, task=task, state="PUBLISH", version="*", extension="mb"))
+    glob_path = conf.asset_path.format(name=name, task=task, state="PUBLISH", version="*", extension="mb")
+    select_paths = glob.glob(glob_path)
     last_path = sorted(select_paths, reverse=True)
 
     if not last_path:
-        raise pipeline_exception.PipelineException("Previous publish path is not available")
+        raise pipeline_exception.PipelineException(f"Previous publish path is not available : {glob_path}")
 
     return last_path[0].replace(os.sep, "/")
 

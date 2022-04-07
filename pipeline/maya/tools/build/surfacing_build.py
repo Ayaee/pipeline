@@ -4,9 +4,10 @@ import pymel.core as pm
 
 
 def build(name):
-    utils.files(name, "MODELING")
+    modeling_path = utils.files(name, "MODELING")
     surfacing_path = utils.pre_build(name, "SURFACING")
-    cmds.file(utils.files(name, "SURFACING"), reference=True, namespace="modeling")
+    cmds.file(newFile = True)
+    cmds.file(modeling_path, reference=True, namespace="modeling")
     pm.saveAs(surfacing_path)
 
 

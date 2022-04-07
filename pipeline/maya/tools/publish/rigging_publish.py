@@ -1,4 +1,4 @@
-import utils_publish as utils
+from pipeline.maya.tools.publish import utils_publish as utils
 import pymel.core as pm
 
 

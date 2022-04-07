@@ -1,6 +1,3 @@
-from pipeline.maya.tools.build import surfacing_build as surfacing
-from pipeline.maya.tools.build import modeling_build as modeling
-from pipeline.maya.tools.build import rigging_build as rigging
 from PySide2.QtWidgets import QApplication, QDialog, QLineEdit
 from Qt import QtCompat, QtCore
 import six
@@ -13,7 +10,14 @@ if six.PY2:
 else:
     from pathlib import Path
 
-ui_path = Path(__file__).parent / "build_window.ui"
+try :
+    import pymel.core as pm
+    in_maya = True
+except:
+    pm = None
+    in_maya = False
+
+ui_path = Path(__file__).parent /"qt"/ "build_window.ui"
 
 
 class ToolWindow(QDialog):
@@ -22,10 +26,14 @@ class ToolWindow(QDialog):
         super(ToolWindow, self).__init__()
         QtCompat.loadUi(str(ui_path), self)
 
-        self.ok.clicked.connect(self.do_choose)
+        self.build.clicked.connect(self.do_choose)
+        if in_maya :
+            self.buildOpen.clicked.connect(self.do_open)
+        else :
+            self.buildOpen.setEnabled(False)
+            #pass
+            #bouton grisée
         self.choose.addItems(["Modeling", "Surfacing", "Rigging"])
-        # self.cancel.close.connect(self.do_cancel)
-        #self.ok.
 
 
     def do_choose(self):
@@ -33,21 +41,34 @@ class ToolWindow(QDialog):
         nameAsset = self.entry.text()
         print(nameAsset)
         choose = str(self.choose.currentText())
+        result = None
         if choose == "Modeling":
-            modeling.build(nameAsset)
+            from pipeline.maya.tools.build import modeling_build as modeling
+            result = modeling.build(nameAsset)
         elif choose == "Surfacing":
             try:
-                surfacing.build(nameAsset)
+                from pipeline.maya.tools.build import surfacing_build as surfacing
+                result = surfacing.build(nameAsset)
             except Exception as ex:
                 dialogs.Dialogs().warn(ex)
         else:
             try:
-                rigging.build(nameAsset)
+                from pipeline.maya.tools.build import rigging_build as rigging
+                result = rigging.build(nameAsset)
             except Exception as ex:
                 dialogs.Dialogs().warn(ex)
+        return result
 
-    def do_cancel(self):
-        pass
+    def do_open(self):
+        result = self.do_choose()
+        pm.openFile(result)
+
+
+def open():
+    app = QApplication(sys.argv)
+    t = ToolWindow()
+    t.show()
+    app.exec_()
 
 
 if __name__ == '__main__':

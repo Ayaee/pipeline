@@ -1,8 +1,7 @@
-import os
-import pymel.core as pm
-import maya.cmds as cmds
-
 from pipeline import conf
+import maya.cmds as cmds
+import pymel.core as pm
+import os
 
 '''
 #### UTILITAIRE TOUT PUBLISH ####

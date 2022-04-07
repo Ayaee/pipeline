@@ -6,6 +6,7 @@ import shutil as shut
 def build(name):
     modeling_path = utils.pre_build(name, "MODELING")
     shut.copy(conf.template_path, modeling_path)
+    return modeling_path
 
 
 ##### TEST #####
