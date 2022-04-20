@@ -6,6 +6,7 @@ import pymel.core as pm
 def build(name):
     modeling_path = utils.files(name, "MODELING")
     rigging_path = utils.pre_build(name, "RIGGING")
+    cmds.file(newFile=True)
     cmds.file(modeling_path, reference=True, namespace="modeling")
     pm.saveAs(rigging_path)
 
