@@ -31,7 +31,8 @@ class ToolWindow(QDialog):
             self.buildOpen.clicked.connect(self.do_open)
         else :
             self.buildOpen.setEnabled(False)
-            #Ouvrir maya
+            #pass
+            #bouton grisée
         self.choose.addItems(["Modeling", "Surfacing", "Rigging"])
 
 
