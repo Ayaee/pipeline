@@ -1,4 +1,6 @@
 ''''''
+import os
+
 '''
 #### CONFIGURATION PATH BASE ####
 '''
@@ -18,4 +20,11 @@ template_path = "D:/ABYGAELLE_FABRE/Pipeline_Git/pipeline/maya/templates/modelin
 '''
 
 grp_valid = ["front", "persp", "side", "top", "top_grp"]
+####
+
+'''
+#### CONFIGURATION PATH ENV
+'''
+
+mayaQt_env = "start rez env maya " + os.environ["REZ_USED_REQUEST"] + " -- maya"
 ####

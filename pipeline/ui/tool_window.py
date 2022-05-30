@@ -1,9 +1,12 @@
+import os
+
 from PySide2.QtWidgets import QApplication, QDialog, QLineEdit
 from Qt import QtCompat, QtCore
 import six
 import sys
 
 from pipeline.utils import dialogs
+from pipeline import conf
 
 if six.PY2:
     from pathlib2 import Path
@@ -30,9 +33,8 @@ class ToolWindow(QDialog):
         if in_maya :
             self.buildOpen.clicked.connect(self.do_open)
         else :
-            self.buildOpen.setEnabled(False)
-            #pass
-            #bouton grisée
+            #self.buildOpen.setEnabled(False)
+            self.buildOpen.clicked.connect(self.do_program)
         self.choose.addItems(["Modeling", "Surfacing", "Rigging"])
 
 
@@ -62,6 +64,12 @@ class ToolWindow(QDialog):
     def do_open(self):
         result = self.do_choose()
         pm.openFile(result)
+
+
+    def do_program(self):
+        result = self.do_choose()
+        os.system(conf.mayaQt_env + " " + result) #Trouver une manière plus récente open
+
 
 
 def open():
