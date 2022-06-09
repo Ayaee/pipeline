@@ -1,12 +1,12 @@
-import os
-
 from PySide2.QtWidgets import QApplication, QDialog, QLineEdit
 from Qt import QtCompat, QtCore
 import six
 import sys
+import os
 
 from pipeline.utils import dialogs
 from pipeline import conf
+
 
 if six.PY2:
     from pathlib2 import Path
@@ -61,6 +61,7 @@ class ToolWindow(QDialog):
                 dialogs.Dialogs().warn(ex)
         return result
 
+
     def do_open(self):
         result = self.do_choose()
         pm.openFile(result)
@@ -71,13 +72,14 @@ class ToolWindow(QDialog):
         os.system(conf.mayaQt_env + " " + result) #Trouver une manière plus récente open
 
 
-
 def open():
     app = QApplication(sys.argv)
     t = ToolWindow()
     t.show()
     app.exec_()
 
+
+#### Test ####
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
