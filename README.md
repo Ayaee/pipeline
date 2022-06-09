@@ -7,7 +7,7 @@ Création d'un petit pipeline Maya, possédant plusieurs fonctionnalités
 - Créations d'un build Modeling avec un template (architecture de la scène préparée)
 - Save réalisable en WIP ainsi qu'en Publish (avec création entière du chemin pour le projet si non existante)
 - Ouverture d'un Publish pour le transformer en WIP pour un changement de Task (ex : ouverture du Publish Modeling pour faire le WIP Texturing)
-- Création d'un Launcher permettant d'ouvrir le tool avant même l'ouverture du programme (permettant de créer une base d'un build Modeling dès l'ouverture même du programme)
+- Création d'un Launcher permettant d'ouvrir le tool avant même l'ouverture du programme (permettant de créer une base d'un build Modeling dès l'ouverture du programme)
 
 
 ### Interface
@@ -58,7 +58,7 @@ Le projet contient un "__ init __.py" dans le dossier conf contenant des Variabl
 Si vous avez des retours à me transmettre pour améliorer certaines choses n'hésitez pas à me contacter sur afabre@artfx.fr par mail ou pas Google Chat
 
 
-## Authors
+## Auteur
 
 - [@abygaëllefabre](https://github.com/Ayaee)
 
