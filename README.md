@@ -53,6 +53,11 @@ Le projet contient un "__ init __.py" dans le dossier conf contenant des Variabl
 - Réaliser une version plus complexe de l'interface permettant à l'utilisateur plus de maîtrise sur son tool, [PipelineV.2](https://github.com/Ayaee/Pipeline_Browser)
 
 
+### Infos +
+Coucou Gaetan ! Je te fais une petite partie en plus car je n'ai pas l'impression que tout est bien expliqué, le mini pipe est pour le moment utile seulement sur Maya, il s'utilise soit avec le .bat à l'extérieur de Maya sur son bureau mais ne peut donc faire que le buil de base de modeling, soit dans Maya pour build et publish n'importe quel scène.
+(Sur mon ordi j'ai dans Maya deux tool que j'ai fais en script pour avoir mon interface build et mon publish, mais je ne suis pas sûre que tu les auras de base, si jamais ce n'est pas le cas, dis le moi et je rajouterais les deux scripts Maya pour les tools)
+
+
 ## Retour
 
 Si vous avez des retours à me transmettre pour améliorer certaines choses n'hésitez pas à me contacter sur afabre@artfx.fr par mail ou pas Google Chat
